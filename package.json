@@ -1,0 +1,44 @@
+{
+  "name": "vite-lit",
+  "version": "0.2.0",
+  "type": "module",
+  "main": "dist/index.es.js",
+  "exports": {
+    ".": "./dist/index.es.js"
+  },
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean:build": "rimraf dist types",
+    "clean:test": "rimraf test",
+    "lint": "eslint packages --fix",
+    "dev": "vite",
+    "pretest": "tsc --p tsconfig.test.json",
+    "test": "wtr",
+    "prebuild": "npm run clean:build",
+    "build": "tsc && vite build",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^2.5.33",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "@web/dev-server-legacy": "^0.1.7",
+    "@web/test-runner": "^0.13.15",
+    "@web/test-runner-playwright": "^0.8.6",
+    "eslint": "^7.32.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.4",
+    "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-rc.2"
+  }
+}
